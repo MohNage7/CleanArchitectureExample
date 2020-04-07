@@ -1,4 +1,4 @@
-package com.mohnage7.cleanexample.db
+package com.mohnage7.cleanexample.framework.db
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

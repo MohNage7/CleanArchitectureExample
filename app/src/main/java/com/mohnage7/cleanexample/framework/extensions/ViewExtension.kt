@@ -1,4 +1,4 @@
-package com.mohnage7.cleanexample.extensions
+package com.mohnage7.cleanexample.framework.extensions
 
 import android.view.View
 

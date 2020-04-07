@@ -1,13 +1,13 @@
-package com.mohnage7.cleanexample.ui
+package com.mohnage7.cleanexample.presentation.ui.view
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.mohnage7.cleanexample.R
-import com.mohnage7.cleanexample.extensions.makeInvisible
-import com.mohnage7.cleanexample.extensions.makeVisible
-import com.mohnage7.cleanexample.ui.model.Post
-import com.mohnage7.cleanexample.ui.viewmodel.PostsViewModel
+import com.mohnage7.cleanexample.framework.extensions.makeInvisible
+import com.mohnage7.cleanexample.framework.extensions.makeVisible
+import com.mohnage7.cleanexample.presentation.ui.viewmodel.PostsViewModel
+import com.mohnage7.domain.Post
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
@@ -44,7 +44,8 @@ class PostsActivity : AppCompatActivity() {
     }
 
     private fun setupAdapter(postsList: List<Post>) {
-        val postsAdapter = PostsAdapter(postsList)
+        val postsAdapter =
+            PostsAdapter(postsList)
         postsRecyclerView.layoutManager = LinearLayoutManager(this)
         postsRecyclerView.setHasFixedSize(true)
         postsRecyclerView.adapter = postsAdapter

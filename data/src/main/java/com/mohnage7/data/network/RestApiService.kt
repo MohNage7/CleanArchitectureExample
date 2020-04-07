@@ -1,6 +1,5 @@
-package com.mohnage7.cleanexample.network
+package com.mohnage7.data.network
 
-import io.reactivex.Observable
 import io.reactivex.Single
 import retrofit2.http.GET
 

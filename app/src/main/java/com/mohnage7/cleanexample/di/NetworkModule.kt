@@ -2,7 +2,7 @@ package com.mohnage7.cleanexample.di
 
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import com.mohnage7.cleanexample.BuildConfig.BASE_URL
-import com.mohnage7.cleanexample.network.RestApiService
+import com.mohnage7.data.network.RestApiService
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.dsl.module

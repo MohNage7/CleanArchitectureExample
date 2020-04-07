@@ -1,10 +1,8 @@
-package com.mohnage7.cleanexample.db
+package com.mohnage7.cleanexample.framework.db
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
-import com.mohnage7.cleanexample.ui.model.Post
-import io.reactivex.Observable
 import io.reactivex.Single
 
 @Dao

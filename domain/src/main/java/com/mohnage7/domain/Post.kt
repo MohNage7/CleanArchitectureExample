@@ -1,4 +1,4 @@
-package com.mohnage7.cleanexample.ui.model
+package com.mohnage7.domain
 
 data class Post(
     val body: String? = null,

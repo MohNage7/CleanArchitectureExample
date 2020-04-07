@@ -1,2 +1,5 @@
 rootProject.name='CleanExample'
 include ':app'
+include ':domain'
+include ':data'
+include ':usecase'
