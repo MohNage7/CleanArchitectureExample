@@ -1,7 +1,7 @@
 package com.mohnage7.cleanexample.ui.repository
 
+import com.mohnage7.cleanexample.db.PostDao
 import com.mohnage7.cleanexample.db.PostEntity
-import com.mohnage7.cleanexample.db.PostsDatabase
 import com.mohnage7.cleanexample.network.RestApiService
 import com.mohnage7.cleanexample.ui.model.Post
 import io.reactivex.Single
@@ -10,30 +10,9 @@ import io.reactivex.schedulers.Schedulers
 
 class Repository(
     private val restApiService: RestApiService,
-    private val postsDatabase: PostsDatabase
+    private val postDao: PostDao
 ) {
-
-//    fun getPosts(): Single<List<Post>> = restApiService.getPosts().map { it.data!! }
-//        .onErrorResumeNext { throwable ->
-//            return@onErrorResumeNext if (throwable is IOException) {
-//                postsDatabase.postDao.getPosts().map { postsList ->
-//                    postsList.map { Post(it.content, it.id, it.title) }
-//                }
-//            } else {
-//                Single.error(throwable)
-//            }
-//        }.doOnSuccess { postsList ->
-//            postsDatabase.postDao.insertAll(postsList.map {
-//                PostEntity(
-//                    it.id,
-//                    it.title,
-//                    it.body
-//                )
-//            }
-//            )
-//        }
-
-    fun getPosts(): Single<List<Post>> = postsDatabase.postDao.getPosts()
+    fun getPosts(): Single<List<Post>> = postDao.getPosts()
         .map { postsList ->
             postsList.map { Post(it.content, it.id, it.title) }
         }
@@ -42,7 +21,7 @@ class Repository(
             Single.just(it.data)
         }.doOnSuccess { postsList ->
             postsList?.let {
-                postsDatabase.postDao.insertAll(
+                postDao.insertAll(
                     it.map { post ->
                         PostEntity(
                             post.id,
