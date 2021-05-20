@@ -18,7 +18,7 @@ buildscript {
 
 ext {
     retrofitVersion = "2.9.0"
-    roomVersion = '2.2.6'
+    roomVersion = '2.3.0'
     koin_version = "2.2.2"
 }
 
